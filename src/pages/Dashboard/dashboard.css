@@ -1,0 +1,20 @@
+.dashboard{
+    position:relative;
+}
+.home{
+    top:100px;
+    left:100px;
+    width: 70%;
+    height: 87vh;
+    position: absolute;
+    background-color: #edeef0;
+    overflow: scroll;
+    gap: 10px;
+}
+.home::-webkit-scrollbar{
+    display: none;
+}
+.card{
+    height: 350px;
+    margin: 10px;
+}
