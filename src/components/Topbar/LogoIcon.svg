@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="298" height="239" viewBox="0 0 298 239">
+  <defs>
+    <clipPath id="clip-Artboard_2">
+      <rect width="298" height="239"/>
+    </clipPath>
+  </defs>
+  <g id="Artboard_2" data-name="Artboard – 2" clip-path="url(#clip-Artboard_2)">
+    <rect width="298" height="239" fill="#fff"/>
+    <rect id="Rectangle_1" data-name="Rectangle 1" width="298" height="239" fill="#fff"/>
+    <g id="Group_2" data-name="Group 2" transform="translate(76.109 73)">
+      <g id="Group_1" data-name="Group 1" transform="translate(46 18)">
+        <path id="Path_1" data-name="Path 1" d="M28.47,27.516S21.792,45.261,23.233,49.5s8.888,15.895,8.888,15.895V48.117Z" transform="translate(-23.029 -24.631)" fill="#5a4ae3"/>
+        <path id="Path_2" data-name="Path 2" d="M0,0,5.484,25.245,4.866,43.512,11.2,30.377A8.821,8.821,0,0,0,11.2,21C8.188,15.8,0,0,0,0Z" transform="matrix(1, 0.017, -0.017, 1, 6.53, 0)" fill="#5a4ae3"/>
+        <rect id="Rectangle_2274" data-name="Rectangle 2274" width="1.122" height="29.264" transform="translate(25.769 6.764)" fill="#5a4ae3" opacity="0"/>
+      </g>
+    </g>
+  </g>
+</svg>

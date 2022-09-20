@@ -1,0 +1,48 @@
+.comingSoon-page-container {
+    position: relative;
+    border-radius: 10px;
+}
+
+.comingSoonpage {
+    top: 98px;
+    left: 100px;
+    width: 90vw;
+    height: 83vh;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    background-color: #edeef0;
+}
+
+.comingSoon-card {
+    width: 40%;
+    background-color: fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.comingSoon-card span {
+    color: rgb(51, 167, 225);
+}
+
+@media(max-width:1000px) {
+    .comingSoonpage {
+        width: 85%;
+    }
+}
+
+@media(max-width:700px) {
+    .comingSoonpage {
+        width: 80%;
+    }
+}
+
+@media(max-width:500px) {
+    .comingSoonpage {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+    }
+}
