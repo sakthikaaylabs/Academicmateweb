@@ -2,10 +2,10 @@
     position:relative;
 }
 .home{
-    top:100px;
+    top:90px;
     left:100px;
     width: 70%;
-    height: 87vh;
+    height: 85vh;
     position: absolute;
     background-color: #edeef0;
     overflow: scroll;
