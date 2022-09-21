@@ -1,0 +1,28 @@
+.notfound-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .notfound-image {
+    width: 500px;
+    height: 500px;
+    object-fit:inherit;
+  }
+  @media (max-width:720px){
+    .notfound-image{
+        width: 500px;
+        height: 500px;
+    }
+  }
+
+  @media (max-width:400px){
+    .notfound-image{
+        width: 400px;
+        height: 400px;
+    }
+  }
