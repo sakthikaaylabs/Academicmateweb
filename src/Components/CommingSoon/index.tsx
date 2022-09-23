@@ -1,9 +1,11 @@
 import "../../style/comingsoon.css";
 import { Box, Button, Card, CardMedia, InputAdornment, OutlinedInput, Typography } from "@mui/material";
 import { EmailOutlined } from '@mui/icons-material'
+import {useNavigate} from 'react-router-dom'
 const ComingsoonImg = require("../../assets/constructionasset.png");
 
 export default function ComingSoon() {
+  const navigate=useNavigate();
   return (
     <div className="comingSoon-page-container">
       <Card className="comingSoonpage">
@@ -21,7 +23,7 @@ export default function ComingSoon() {
             <br />
             Check back for an
             <br />
-            Update soon
+            Update
           </Typography>
           <Box>
             <OutlinedInput
@@ -35,6 +37,7 @@ export default function ComingSoon() {
               }
             />
             <Button variant="contained" sx={{ borderRadius: 3,width:'100%',mt:2 }} >Notify</Button>
+            <Button variant="contained" sx={{ borderRadius: 3,width:'100%',mt:2 }} onClick={()=>navigate('/')} >Back to Home</Button>
           </Box>
         </Card>
       </Card>

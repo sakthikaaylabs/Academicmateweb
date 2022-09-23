@@ -1,8 +1,9 @@
-import React, { useEffect,useState } from 'react';
+import React, { useState } from 'react';
 import { Card, CardMedia, Typography, Box, Checkbox, Button, Link, OutlinedInput, Alert, InputAdornment,FormHelperText } from '@mui/material';
 import { AccountCircle, EmailOutlined, LineAxisOutlined, LockOutlined } from '@mui/icons-material';
-// import { API } from '../../api/index'  // fetch (method,path,reqData)
+import { API } from '../../shared/api'  // fetch (method,path,reqData)
 import { useNavigate } from 'react-router-dom';
+import {ToastContainer,toast} from 'react-toastify'
 const SignupImg = require('../../assets/signup.jpg');
 
 
@@ -17,7 +18,6 @@ interface State {
 export default function Signup() { 
     const navigate=useNavigate() 
     const [checked, setChecked] = React.useState(false);
-    const [alert, setalert] = useState<any>('')
     const [values, setValues] =useState<State>({
         userName: '',
         email: '',
@@ -39,15 +39,15 @@ const [errorObj, seterrorObj] = useState<any>({
         const pwdRegex=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,15}$/
         let isError:boolean=false
         let temp:object={}
-        Object.entries(data).map(([key,value])=>{
+        Object.entries(data).forEach(([key,value])=>{
            if(value===''){ 
             isError=true
             temp={...temp,[key]:`Please enter the ${key}`}
-            return;
+            return ;
         }
         if(key.includes('email')&& !emailRegex.test(value)){
             temp={...temp,[key]:`Please enter the valid Email`}
-            return
+            return 
         }
         temp={...temp,[key]:""}
         return;
@@ -72,11 +72,12 @@ const [errorObj, seterrorObj] = useState<any>({
             return
         };
         
-        // const response = await API('post','/register',formData);
-        // if(response.data.success){
-        //     setalert(<Alert severity="success">Login Successfull</Alert>)
-        //     return navigate('/')
-        // }
+        const response = await API('post','/register',formData);
+        if(response.data.success){
+            const {data}=response.data
+            localStorage.setItem('acadeUser',JSON.stringify({user:data.userName,id:data._id,email:data.email}))     
+             return navigate('/')
+        }
 
     }
     return (
@@ -180,8 +181,7 @@ const [errorObj, seterrorObj] = useState<any>({
                         </div>
                     </div>
                 </div>
-            </Card>
-            {alert}
+            </Card>           
         </Card>
     )
 }

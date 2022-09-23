@@ -5,7 +5,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import { EmailOutlined, LockOutlined } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import {API} from '../shared/api'
-import ls from 'local-storage'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LoginImg = require ('./../assets/login.jpg');
 
@@ -39,16 +40,15 @@ function Login() {
     console.log("no error")
     const response = await API('post','/login',formData)
     console.log(response)
-    if(response.data.success){
-        const {data}=response.data
-      ls('acadeUser',JSON.stringify({user:data.userName,id:data._id,email:data.email}))
-      setTimeout(()=>{
-        console.log('app')
-        return navigate('/')
-      },5000)
-        
+   
+    if(!response.data.success){
+      const {msg}=response.data
+          toast(msg)
+        return;
     }
-
+    const {data}=response.data
+    localStorage.setItem('acadeUser',JSON.stringify(data))         
+     return navigate('/',{state:"login"});  
 }
   return (
     <Card sx={{ display: "flex", flexDirection: "row", height: "100vh", width: "100vw", fontFamily:'Roboto' }}>
@@ -118,6 +118,7 @@ function Login() {
           </div>
         </div>
       </Card>
+      <ToastContainer/>
     </Card>
   )
 }

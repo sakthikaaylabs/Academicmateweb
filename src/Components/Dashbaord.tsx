@@ -1,9 +1,19 @@
 import { Card } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import './../style/dashboard.css';
 import './../style/rightSidebar.css';
-
+import {ToastContainer,toast} from 'react-toastify'
+import {useLocation} from 'react-router-dom'
 const Dashboard = () => {
+  const location=useLocation()
+  useEffect(()=>{
+    const {state}=location
+    if(state==='login'){
+      toast("Login SuccessFull")
+    }
+    
+  
+  })
   return (
     <div className='dashboard'>
       <div className='home'>
@@ -15,6 +25,7 @@ const Dashboard = () => {
         <Card className='card'>6</Card>
       </div>
       <RightSidebar/>
+      <ToastContainer/>
     </div>
   )
 }
