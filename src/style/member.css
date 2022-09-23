@@ -1,0 +1,30 @@
+.member-page-container{
+    position:relative
+}
+.member-page{
+    top:98px;
+    left:100px;
+    width: 90vw;
+    height: 83vh;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #edeef0;
+    overflow: scroll;
+}
+.member-page::-webkit-scrollbar{
+    display: none;
+}
+.member-header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    height: 85px;
+    z-index: 2;
+}

@@ -1,0 +1,32 @@
+.notification{
+    position:relative;
+}
+.notification-page{
+    top:90px;
+    left:208px;
+    width: 80%;
+    height: 85vh;
+    position: absolute;
+    background-color: #edeef0;
+    overflow: scroll;
+    gap: 10px;
+}
+.notificationCard{
+    height: 70px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+.notificationCardIcon{
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.notificationMsgImg{
+    width:10px;
+    height:10px;
+}

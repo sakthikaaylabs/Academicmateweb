@@ -1,80 +1,65 @@
-import React from "react";
-import { Card, InputBase } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import { styled } from "@mui/material/styles";
-
-import { VscBell } from "react-icons/vsc";
-import { AiFillMessage } from "react-icons/ai";
-import { BiUser } from "react-icons/bi";
-
-
+import React from 'react'
 import "../../style/Topbar.css";
-const image = require("../../assets/logo3.png");
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: "50px",
-  backgroundColor: "white",
-  "&:hover": {
-    backgroundColor: "white",
-  },
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
-    width: "auto",
-  },
-}));
+import { Search, Person, Chat, Notifications } from "@mui/icons-material";
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
+const logo = require("../../assets/acamLogo.png")
+export default function Topbar() {
 
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
-  },
-}));
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
 
-export default function Header() {
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
-    <Card className="header" sx={{ background: "#5a4ae3" }}>
-      <div style={{ backgroundColor: "white" }}>
-        <img src={image} className='logo' alt="logo"  />
+    <div className="topbarContainer">
+      <div className="topbarLeft">
+        <img src={logo} alt="logo" className="logoImg"/>
       </div>
-      <div className="header-components">
-        <div className="header-search">
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-        </div>
-        <div className="header-icons">
-          <VscBell />
-          <AiFillMessage />
-          <BiUser />
+      <div className="topbarCenter">
+        <div className="searchbar">
+          <Search className="searchIcon" />
+          <input
+            placeholder="Search..."
+            className="searchInput"
+          />
         </div>
       </div>
-    </Card>
+      <div className="topbarRight">
+        <div className="topbarIcons">
+          <div className="topbarIconItem" onClick={handleMenu}>
+            <Person  />
+            <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+              </Menu>
+          </div>
+          <div className="topbarIconItem">
+            <Chat />
+          </div>
+          <div className="topbarIconItem">
+            <Notifications />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
