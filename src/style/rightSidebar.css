@@ -1,0 +1,29 @@
+.right-sidebar {
+    width: 20%;
+    height: 83vh;
+    position: absolute;
+    top: 105px;
+    right: 20px;
+    background-color: #edeef0;
+    overflow: scroll;
+  }
+  
+  .right-sidebar::-webkit-scrollbar{
+      display: none;
+  }
+  
+  .suggest-group,
+  .suggest-page {
+    height: 40vh;
+    margin: 10px;
+  }
+  
+  .suggest-group-tittle,.suggest-page-tittle{
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+  }
+  
