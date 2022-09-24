@@ -56,7 +56,6 @@ const [errorObj, seterrorObj] = useState<any>({
         return {error:temp,isError}
     }
     const formSubmit=async()=>{
-        const emailRegex=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
         const pwdRegex=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,15}$/
         const formData=JSON.parse(JSON.stringify(values));
         const {isError,error}=validate(formData);
@@ -76,7 +75,7 @@ const [errorObj, seterrorObj] = useState<any>({
         if(response.data.success){
             const {data}=response.data
             localStorage.setItem('acadeUser',JSON.stringify({user:data.userName,id:data._id,email:data.email}))     
-             return navigate('/')
+             return navigate('/',{state:"register"})
         }
 
     }

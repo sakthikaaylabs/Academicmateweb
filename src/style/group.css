@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+.group-page-container{
+    position:relative;
+    border-radius: 10px;
+}
+.group-page{
+    top:98px;
+    left:100px;
+    width: 90vw;
+    height: 83vh;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #edeef0;
+    overflow: scroll;
+}
+.group-page::-webkit-scrollbar{
+    display: none;
+}
+.group-header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 36px;
+    width: 100%;
+    /* height: 85px; */
+    z-index: 2;
+}
+.group-header-search{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 20%;
+    padding-right: 20px;
+}
+.group-body{
+    width: 100%;
+    height: 100%;
+}
+.group-details{
+    width: 40%;
+    height: 30%;
+    position: relative;
+}
+.group-page-coverimg{
+    width: 100%;
+    height: 50%;
+    background-color: aquamarine;
+}
+.group-page-userimg-container{
+    position: relative;
+    top: -40px;
+    left: 57px;
+    width: 22%;
+    height: 46%;
+    z-index: 1;    
+}
+.group-page-userimg{
+    position: relative;
+    top: -25px;
+    width: 80%;
+    height: 80%;
+    object-fit: fill;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+.group-name-card{
+    position: relative;
+    top: -65px;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.group-name-details{
+    position: absolute;
+    top:0;
+    left: 300px;
+    color: brown;
+    z-index: 2;
+}
+.group-media{
+    position: absolute;
+    right: 10px;
+    width: 30%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 2;
+}
+.group-media-icon{
+    font-size: xx-large;
+    background-color: rgb(25 118 210);
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+}
+.group-camera-icon{
+    width: 39px;
+    height: 35px;
+    border-radius: 45px;
+    display: inline-block;
+    line-height: 45px;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background: #5a4ae3;
+}
+.group-page-name{
+    position:absolute;
+    top:90px;
+    z-index: 0;
+    width: 80%;
+    font-family: 'Roboto';
+}
+.group-btn{
+    position: absolute;
+    top: 110px;
+    right: 0;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:5px;
+}
+.group-btn-icon{
+    /* background-color: #08f; */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.group-footer{
+    width: 100%;
+    height: 85px;
+
+}
+@media(max-width:1485px){
+    .group-name-card{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .group-name-details{
+        display: flex;
+        flex-direction: row;
+        margin-left: 0;
+    }
+    .group-media{
+        display: flex;
+        flex-direction: row;
+    }
+}
+@media (max-width:1100px){
+    .group-btn {
+        position: absolute;
+        top: 130px;
+        right: 0;
+        width: 165px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+ @media(max-width:1024px){
+.group-page{
+    width: 85vw;
+}
+.group-btn{
+    width: 194px;
+    gap: 6px;
+}
+.group-page-name {
+  font-size: smaller;
+}
+}
+@media(max-width:768px){
+    .group-page-userimg {
+        position: relative;
+        top: -43px;
+        left: -31px;
+        width: 88px;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 50%;
+        border: 1px border rgb(84, 82, 82);
+    }
+    .group-page-name {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        z-index: 0;
+        width: 62%;
+        
+    }
+}
+@media(max-width:720px){
+    .group-page{
+        width: 83vw;
+    } 
+}
+@media(max-width:620px){
+    .group-page{
+        width: 80vw;
+    } 
+}
+@media(max-width:530px){
+    .group-page{
+        width: 75vw;
+    } 
+}
+@media(max-width:320px){
+    .group-page{
+        width: 50vw;
+        display: grid;
+        grid-column: auto;
+    } 
+    .group-details{
+        width: 100%;
+    }
+    .css-10mzr36-MuiGrid-root{
+        height: 275px;
+    }
+    .css-1e9mzpv-MuiPaper-root-MuiCard-root{
+        height: 275px;
+    }
+}
