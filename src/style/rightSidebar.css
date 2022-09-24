@@ -3,7 +3,7 @@
     height: 83vh;
     position: absolute;
     top: 105px;
-    right: 20px;
+    right: 50px;
     background-color: #edeef0;
     overflow: scroll;
   }
@@ -11,13 +11,11 @@
   .right-sidebar::-webkit-scrollbar{
       display: none;
   }
-  
   .suggest-group,
   .suggest-page {
     height: 40vh;
     margin: 10px;
   }
-  
   .suggest-group-tittle,.suggest-page-tittle{
       height: 50px;
       display: flex;
@@ -26,4 +24,48 @@
       align-items: center;
       padding: 10px;
   }
-  
+  .Leftbar{
+    flex: 1
+}
+.suggest-group-body,.suggest-page-body{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.NotificationsContainer{
+    width: 18pc;
+    height: 60vh;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.notificationimg{
+    width:37px;
+    height: 37px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.followinguserimage{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: 40px;
+
+}
+.likeimage{
+    width: 30px;
+    height: 30px;
+    margin-left: 43px;
+    border-radius: 3px;
+}
+.exploreimage{
+    width: 86px;
+    margin-left: 4px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-top: 6px;
+}

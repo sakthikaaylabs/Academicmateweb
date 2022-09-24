@@ -1,17 +1,16 @@
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
-import Dashboard from './Components/Dashbaord'
+// import Dashboard from './Components/Dashbaord'
+import Dashboard from './Components/Dashboard/dashboard'
 import {PrivateRoutes,PublicRoutes} from './PrivateRouters'
 import Login from './Components/Login'
 import RouteWithDB from './Components/RouteWithDB'
 import Notfound from './Components/404Page/page'
 import Registration from './Components/Registraion/registration'
 import Academic from './Components/Academic'
-import Group from './Components/Group'
+import Group from './Components/Group/groups'
 import ComingSoon from './Components/CommingSoon'
-const ls=require('local-storage')
-ls.on("acadeUser",(value:any,old:any)=>{
-  console.log(value,old)
-})
+import Details from './Components/Details/details'
+
 
 const App = () => {
  
@@ -24,7 +23,7 @@ const App = () => {
           <Route path='/academic' element={<RouteWithDB Component={Academic}/>}/>
           <Route path='/group' element={<RouteWithDB Component={Group}/>}/>
           <Route path='/chellanges' element={<ComingSoon/>}/>
-          <Route path='/create' element={<ComingSoon/>}/>
+          <Route path='/create' element={<RouteWithDB Component={Details}/>}/>
           <Route path='/events' element={<ComingSoon/>}/>
           <Route path='/activities' element={<ComingSoon/>}/>
           <Route path='/favorite' element={<ComingSoon/>}/>
